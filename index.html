@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Lambda Calculus to JS Transpiler</title>
+    </head>
+    <body>
+        <script src="dist/bundle.js"></script>
+        Source:<br />
+        <textarea rows='24' cols='80' id='src'>((lambda (x) (+ x 7)) 7)</textarea>
+        <br />
+        <input type='submit' id='go' />
+        <br />
+        <br />
+
+        Compiled JS: <br />
+        <textarea rows='10' cols='80' disabled='true' id='transpiled'>
+        </textarea>
+        <br />
+        <br />
+
+        Evaluates to: <br />
+        <textarea rows='2' cols='80' disabled='true' id='evaluated'>
+        </textarea>
+    </body>
+</html>

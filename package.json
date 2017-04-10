@@ -1,0 +1,31 @@
+{
+  "name": "lambda-calc-js-transpiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "biuld": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yabberyabber/lambda-calc-js-transpiler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yabberyabber/lambda-calc-js-transpiler/issues"
+  },
+  "homepage": "https://github.com/yabberyabber/lambda-calc-js-transpiler#readme",
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "mocha": "^3.2.0",
+    "mocha-webpack": "^0.7.0",
+    "webpack": "^2.3.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "s-expression": "^3.0.3"
+  }
+}
