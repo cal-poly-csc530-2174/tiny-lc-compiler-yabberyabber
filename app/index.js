@@ -14,9 +14,15 @@ function evaluate() {
     var evaled = document.getElementById('evaluated');
 
     try {
+        var output = "";
+        var printit = function(v) {
+            output += "" + v + "\n";
+        };
+
         compiled.innerHTML = transpile(source);
         try {
             evaled.innerHTML = eval(transpile(source));
+            output.innerHTML = output;
         }
         catch (e) {
             evaled.innerHTML = "runtime error\n" + e;

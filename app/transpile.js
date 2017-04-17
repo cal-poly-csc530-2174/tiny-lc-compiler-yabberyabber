@@ -20,7 +20,7 @@ function _transpile(ast) {
         return ast;
     }
     else if (ast[0] == 'lambda' || ast[0] == 'λ') {
-        return "function ({id}) { return ({body}); }"
+        return "(function ({id}) { return ({body}); })"
             .replace("{id}", ast[1][0])
             .replace("{body}", _transpile(ast[2]));
     }
@@ -41,11 +41,11 @@ function _transpile(ast) {
             .replace("{false}", _transpile(ast[3]));
     }
     else if (ast[0] == 'println') {
-        return "console.log({val});"
+        return "(printit({val}))"
             .replace("{val}", _transpile(ast[1]));
     }
     else {
-        return "({func})({arg})"
+        return "(({func})({arg}))"
             .replace("{func}", _transpile(ast[0]))
             .replace("{arg}", _transpile(ast[1]));
     }
