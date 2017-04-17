@@ -1,5 +1,4 @@
-//var parse = require('s-expression');
-import * as parse from 's-expression';
+var parse = require('s-expression');
 
 function numberP(x) {
     return !isNaN(x);
@@ -20,7 +19,7 @@ function _transpile(ast) {
     else if (atomP(ast)) {
         return ast;
     }
-    else if (ast[0] == 'lambda') {
+    else if (ast[0] == 'lambda' || ast[0] == 'λ') {
         return "function ({id}) { return ({body}); }"
             .replace("{id}", ast[1][0])
             .replace("{body}", _transpile(ast[2]));
@@ -58,4 +57,4 @@ function transpile(source) {
     return _transpile(ast);
 }
 
-module.exports.transpile = transpile;
+module.exports = transpile;

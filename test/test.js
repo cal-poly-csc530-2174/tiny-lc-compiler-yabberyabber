@@ -1,12 +1,12 @@
 var assert = require('assert');
-var transpiler = require('../app/transpile.js');
+var transpile = require('../app/transpile.js');
 
 function assert_compiles(source, dest) {
-    assert.strictEqual(transpiler.transpile(source), dest);
+    assert.strictEqual(transpile(source), dest);
 }
 
 function assert_evals(source, val) {
-    assert.equal(eval(transpiler.transpile(source)), val);
+    assert.equal(eval(transpile(source)), val);
 }
 
 describe('Transpiler', function() {
@@ -22,6 +22,7 @@ describe('Transpiler', function() {
 
     it('Func def', function() {
         assert_compiles("(lambda (x) 5)", "function (x) { return (5); }");
+        assert_compiles("(λ (x) 5)", "function (x) { return (5); }");
     });
 
     it('Arithmetic', function() {
