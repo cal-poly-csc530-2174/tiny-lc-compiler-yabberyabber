@@ -12,17 +12,18 @@ function evaluate() {
     var source = document.getElementById('src').value;
     var compiled = document.getElementById('transpiled');
     var evaled = document.getElementById('evaluated');
+    var output = document.getElementById('output');
 
     try {
-        var output = "";
+        var stdout = "";
         var printit = function(v) {
-            output += "" + v + "\n";
+            stdout += "" + v + "\n";
         };
 
         compiled.innerHTML = transpile(source);
         try {
             evaled.innerHTML = eval(transpile(source));
-            output.innerHTML = output;
+            output.innerHTML = stdout;
         }
         catch (e) {
             evaled.innerHTML = "runtime error\n" + e;
